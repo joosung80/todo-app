@@ -1,5 +1,5 @@
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { ChakraProvider } from '@chakra-ui/react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
 import { Layout } from './components/Layout';
 import { TodoForm } from './components/TodoForm';
@@ -17,7 +17,6 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider>
-        <ColorModeScript initialColorMode="light" />
         <Layout>
           <TodoForm onSubmit={createTodo} />
           <TodoFilter currentFilter={filter} onFilterChange={setFilter} />
